@@ -1,75 +1,67 @@
 <h1>i3wm-themer</h1>
 <ul>
-  My collection of themes for i3wm.
+  Ma collection de thèmes pour i3wm.
 
   ![](https://github.com/unix121/i3wm-themer/blob/master/workflow/workflow1.gif?raw=true)
 </ul>
 
-<h1>What you might need</h1>
+<h1>Prérequis :</h1>
 <ul>
-  <li> i3-wm (maybe i3-gaps in some sections) in any Linux distro you prefer</li>
-  <li> <a href="https://github.com/jaagr/polybar">Polybar</a> (for most of the themes)</li>
-  <li> <a href="https://davedavenport.github.io/rofi/">Rofi</a> (for most of the themes)</li>
-  <li> <a href="https://wiki.archlinux.org/index.php/nitrogen">Nitrogen</a> (To set the wallpapers, can also be done manually)</li>
-  <li> Firefox Themes can be installed using the "Stylish" extension</li>
-  <li> Most of the GTK Themes and Icons were created using <a href="https://github.com/actionless/oomox">oomox</a></li>
+  <li> i3-wm (peut être i3-gaps pour certaines sections) sur votre distribution GNU/Linux préférée.</li>
+  <li> <a href="https://github.com/jaagr/polybar">Polybar</a> (pour la pluparts des thèmes)</li>
+  <li> <a href="https://davedavenport.github.io/rofi/">Rofi</a> (pour la pluparts des thèmes)</li>
+  <li> <a href="https://wiki.archlinux.org/index.php/nitrogen">Nitrogen</a> (Pour le fond d'écran, peut aussi être fait manuellement)</li>
+  <li> Les thèmes de Firefox peuvent être installés en utilisant l'extension Firefox "Stylish"</li>
+  <li> La pluparts des thèmes et icônes GTK ont été créés en utilisant <a href="https://github.com/actionless/oomox">oomox</a></li>
 </ul>
 
 <ul>
-  All the necessary changes to your configuration files can be found under /templated_themes/{THEME}/ directory.
-  Copy what you like from every configuration.
-  Under /themes/{THEME}/ directory you can find my exact configuration files, but I do not recommend to copy them
-  directly once they contain my own keybindings and generally settings that might not be suitable for you,
-  but instead you can use the script below to apply the necessary parts from my configuration files
-  to your configuration files.
+  Tous les changments nécéssaire de vos fichiers de configuration peuvent être trouvés dans le répertoire /emplated_themes/{THEME}/
+  Copiez ce que vous voulez de n'importe quelle configuration dans le répertoire /themes/{THEME}/ Vous pouvez trouver mes fichiers de     configuration, mais je ne recommande pas pas de les copier directement, car ils contiennent mes propres raccourcis clavier et des       paramètres spécifique. Mais à la place, vous pouvez utiliser le script d'installation pour appliquer les différentes parties de ma
+  configuration à la votre.
 </ul>
 
-<h3>Basic requirements (for the script)</h3>
+<h3>Prérequis basique (pour le script)</h3>
 <ul>
-This script is still hardcoded so you have to check where your configuration
-files are before you use it.
-<li> i3 configuration file must be placed either under
+Ce script est encore en cours de développement, vous devez donc mettre votre configuration au bon endroit.
+<li> Les fichiers de configuration i3 doivent être placés dans le répertoire :
 
-      ~/.i3/config or ~/.config/i3/config  
+      ~/.i3/config ou ~/.config/i3/config  
 
-</li><li>Polybar configuration file must be under
+</li><li>Les fichiers de configuration de Polybar doivent être placés dans le répertoire :
 
       ~/.config/polybar/config
 
-</li><li>Compton configuration file must be under
+</li><li>Les fichiers de configuration de Compton doivent être placés dans le répertoire :
 
       ~/.config/compton.conf
 
-</li><li>.Xresources should be under
+</li><li>.Xresources doit être placé dans le répertoire :
 
-      ~/.Xresources or ~/.extend.Xresources
+      ~/.Xresources ou ~/.extend.Xresources
 
-</li><li>dmenu configuration file should be under
+</li><li>Les fichiers de configuration de Dmenu doivent être placés dans le répertoire :
 
       ~/.dmenurc
 </li>
-<li>You will still have to make some changes "by hand" even after using the script
-once it's still under development and doesn't change everything on it's own.
+<li>Vous devrez peut être effectuer quelques changements vous-même, après l'exécution du script, car il est encore en développement peut parfois avoir des comportements non désirés.
 </li>
-<li>For common issues check the issues section in the repository</li>
+<li>Pour les problèmes communs, regardez la section issues du dépot.</li>
 </ul>
 
-<h1>How to use the scripts</h1>
+<h1>Utilisation du script</h1>
 <ul>
-This script will overwrite only the needed parts from your configuration files
-in order to apply the basic visuals of any of the themes listed below.
+Le script réécrira seulement les parties de votre configuration utilisés par le thème. Pour appliquer un thème, veuillez effectuer les commandes suivantes :
 </ul>
 <ul>
 
   <li> git clone https://github.com/unix121/i3wm-themer</li>
   <li> cd i3wm-themer/scripts/</li>
-  <li> First backup your current configuration in case you want to come back:
-
+  <li> Premièrement, sauvegarder votre configuration actuelle, au cas vous vous voudriez y revenir :
+  
       ./i3wmthemer -b {BACKUP_NAME}
 
-Backups are saved under i3wmthemer/backups/ directory.
-The backup directory will contain your configuration files mentioned in [Basic requirements] section.
-If anything goes wrong you can still just copy-paste them back to their original place to get back to your current configuration manually.
+La sauvegarde est enregistrée dans le repertoire i3wmthemer/backups/ Le répertoire de sauvegarde contiendra les fichiers de configuration mentionnés dans la section [Prérequis basique]. Si quelque chose se passe mal, vous pouvez les copier-coller à leurs place originale, afin de retrouver votre configuration précédente.
   </li>
 
   <li> Now run the script in configuration mode to apply some of the basic changes for the theme:
